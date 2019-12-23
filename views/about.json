@@ -1,0 +1,27 @@
+{
+  "admins": [
+    {
+      "photoURL": "https://data.whicdn.com/images/302164824/superthumb.jpg?t=1511720792",
+      "name": "Justin Reeves",
+      "job": "Developer",
+      "bio": "Admin0",
+      "linkedin": "https://www.linkedin.com/in/justin-reeves/"
+    },
+
+    {
+      "photoURL": "https://66.media.tumblr.com/5d477a395ec7d0dd5d3c9a265e92ea43/tumblr_oqzq9nv6fr1vzjoszo1_250.jpg",
+      "name": "Mitch Kimball",
+      "job": "Developer",
+      "bio": "Admin1",
+      "linkedin": "https://www.linkedin.com/in/m-kimball/"
+    },
+
+    {
+      "photoURL": "https://vignette.wikia.nocookie.net/spongebob/images/8/82/E_Minor-0/revision/latest/scale-to-width-down/335?cb=20140318224813",
+      "name": "Joshua Kohn",
+      "job": "Developer?",
+      "bio": "Admin2",
+      "linkedin": "https://www.linkedin.com/in/joshua-kohn/"
+    }
+  ]
+}

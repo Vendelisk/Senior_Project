@@ -1,11 +1,21 @@
-var express = require('express');
-var router =  express.Router();
+/**
+ * CodeExplorer V2.0
+ * help.js
+ * Description: 
+ *  Help Page
+ * 
+ * Connections:
+ * */
 
-/* projectsPage '/projectsPage' */
+var express = require('express');
+var router = express.Router();
+
+/* Render Help page */
 router.get('/', function (req, res) {
-    /* you can render objects and array with send(object). */
-    /* render takes an .ejs file and renders it*/
-    res.render('help');
+  res.render('help', {
+    title: "Program Explorer Help!",
+    css: "style.css"
+  });
 });
 
 module.exports = router;

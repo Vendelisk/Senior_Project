@@ -1,18 +1,27 @@
-var express = require('express');
-var router =  express.Router();
+/**
+ * CodeExplorer V2.0
+ * home.js
+ * Description: 
+ *  Home Page for CodeExplorer
+ * 
+ * Connections:
+ *    1. Account Creation
+ *    2. User Login
+ *    3. Program Explorer
+ * */
 
-/* home page '/' */
-router.get('/', function (req, res) {
-    /* render takes an .ejs file and renders it*/
-    res.render('home',{
-        title: "Program Showcase",
+const express = require('express');
+const router = express.Router();
+
+/**
+ * Handle Client Requests to Home Page 
+ * */
+router.get('/', (req, res) => {
+    console.log(`GET request made to ${req.originalUrl}`);
+    res.render('home', {
+        title: "Program Explorer",
+        css: "style.css"
     });
-});
-
-/* so you can logout from the home page. */
-router.get('/logout', function(req, res){
-    req.logout();
-    res.redirect('/');
 });
 
 module.exports = router;

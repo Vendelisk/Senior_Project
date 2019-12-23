@@ -19,9 +19,6 @@ var ProgramScheme = mongoose.Schema({
     },
     mainProgram: {
         type: String
-    },
-    inputMessages: {
-        type: Array
     }
 });
 

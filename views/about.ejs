@@ -1,71 +1,57 @@
 <%include partials/header.ejs%>
-<!-- This page doesn't have personal links
-    it can be removed without affecting other pages
--->
-<section id="fh5co-aboutSection" data-section="home" style="background-image: url(images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
-    <div class="gradient"></div>
-    <div class="container" ">
-    <div class="text-wrap" >
-        <section id="fh5co-about" data-section="about">
-            <div class="container" >
-                <div class="row">
-                    <div class="col-md-12 section-heading text-center" id="aboutSection">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <h2 id="aboutText">Meet the team behind this project</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" >
-                    <div class="col-md-3" >
-                        <div class="fh5co-person text-center ">
-                            <figure><img src="images/person1.jpg" alt="Image"></figure>
-                            <h3 id="aboutName">Justin Reeves</h3>
-                            <span class="fh5co-position" id="aboutSpecifc">Back-End Developer</span>
-                            <p>TBD</p>
-                            <ul class="social social-circle">
-                                <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="fh5co-person text-center">
-                            <figure><img src="images/person2.jpg" alt="Image"></figure>
-                            <h3 id="aboutName">Mitch Kimball</h3>
-                            <span class="fh5co-position" id="aboutSpecifc" >Back-End Developer</span>
-                            <p>TBD</p>
-                            <ul class="social social-circle">
-                                <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="fh5co-person text-center">
-                            <figure><img src="images/person3.jpg" alt="Image"></figure>
-                            <h3 id="aboutName">Joshua Kohn</h3>
-                            <span class="fh5co-position" id="aboutSpecifc">Front-End Developer</span>
-                            <p>TBD</p>
-                            <ul class="social social-circle">
-                                <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="fh5co-person text-center">
-                            <figure><img src="images/person3.jpg" alt="Image"></figure>
-                            <h3 id="aboutName">Sean McGinn</h3>
-                            <span class="fh5co-position" id="aboutSpecifc">Front-End Developer</span>
-                            <p>TBD</p>
-                            <ul class="social social-circle">
-                                <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<section
+  id="fh5co-aboutSection"
+  data-section="home"
+  style="background-image: url(images/starry_night.jpg);"
+  data-stellar-background-ratio="0.5"
+>
+  <div class="container" ">
+  <div class="text-wrap">
+    <section id="fh5co-about" data-section="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 section-heading text-center" id="aboutSection">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 id="aboutText">Meet the team behind this project</h2>
+              </div>
             </div>
-        </section>
-    </div>
+          </div>
+        </div>
+        <!-- Create rows for every three admins in json file -->
+        <% if (about) {%> 
+          <% let len = about.admins.length; %>
+          <% let curIdx = 0; %> 
+          <% for(i = 0; i < len / 3; i++) {%>
+        <div class="row row-bottom-padded-sm">
+          <% let cols = curIdx + Math.min(3, len - (3 * i)); %> 
+          <% for(; curIdx < cols ; curIdx++) {%> 
+            <% let admin = about.admins[curIdx]; %>
+          <div class="col-md-4">
+              <div class="overlay-darker"></div>
+              <div class="overlay"></div>
+            <div class="fh5co-person text-center ">
+              <figure>
+                <img src="<%= admin.photoURL %>" alt="Image" />
+              </figure>
+              <h3 id="aboutName"><%= admin.name %></h3>
+              <span class="fh5co-position" id="aboutSpecifc"
+                ><%= admin.job %></span>
+              <p><%= admin.bio %></p>
+              <ul class="social social-circle">
+                <li>
+                  <a href="<%= admin.linkedin %>"> <i class="icon-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <% } %>
+        </div>
+          <% } %> 
+        <% } %>
+      </div>
+    </section>
+  </div>
 </section>
 
 <%include partials/footer.ejs%>

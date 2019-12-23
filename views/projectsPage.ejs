@@ -1,44 +1,38 @@
-
 <% include partials/header.ejs%>
 
-<body>
-
-<h1>Search for Projects</h1>
-
-<nav class="navbar navbar-expand-sm navbar-custom">
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbar3">
-        <span class="navbar-toggler-icon custom-toggler"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar3">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home<span class="sr-only">Home</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="createAccount">Account</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="projectsPage">Search Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="help">Help</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<div class="container-fluid">
-
-    <div class="row content">
-        <div class="col-sm-6 leftHalf">
-            <p> Will be able to search projects</p>
+<section id="fh5co-work" data-section="User's Projects">
+  <div class="gradient" style="z-index: -100"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 section-heading text-center">
+        <h2><%= user %>'s Programs</h2>
+        <div class="row">
+          <div class="col-md-12 subtext">
+            <h3>Click on a program below to view it!</h3>
+          </div>
         </div>
-
-        <div class="col-sm-6 rightHalf">
-            <p>Some more info.......</p>
-        </div>
+      </div>
     </div>
-</div>
 
+    <div class="row row-bottom-padded-sm">
+      <!-- Displays the programs a user has uploaded -->
+      <%if (programs) {%> 
+        <% for(var p in programs) {%>
+      <div class="col-md-4 col-sm-6 col-xxs-12">
+        <a
+          href="/viewer/<%= user %>/<%= programs[p].programName %>"
+          class="fh5co-project-item image-popup"
+        >
+          <div class="fh5co-text">
+            <h2><%= programs[p].programTitle %></h2>
+            <span>Click to run this program!</span>
+          </div>
+        </a>
+      </div>
+        <% } %> 
+      <% } %>
+    </div>
+  </div>
+</section>
 
 <% include partials/footer.ejs%>

@@ -1,8 +1,10 @@
-var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+
+const Schema = mongoose.Schema;
 
 // user scheme
-var UserScheme = mongoose.Schema({
+var UserScheme = Schema({
     username: {
         type: String,
         index: true
@@ -40,7 +42,6 @@ module.exports.getUser = function (username, callback) {
 };
 
 module.exports.getUserById = function (id, callback) {
-    console.log("the id is " + id);
     User.findById(id, callback);
 };
 

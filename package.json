@@ -1,11 +1,11 @@
 {
-  "name": "senior_project",
-  "version": "1.0.0",
+  "name": "code_explorer",
+  "version": "2.0.0",
   "description": "Program showcase",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -13,26 +13,26 @@
   },
   "dependencies": {
     "bcryptjs": "*",
-    "body-parser": "^1.18.3",
     "connect-flash": "*",
-    "cookie-parser": "^1.4.3",
     "del": "^3.0.0",
-    "ejs": "^2.6.1",
-    "express": "*",
-    "express-fileupload": "*",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
     "express-html": "*",
     "express-messages": "*",
-    "express-session": "*",
+    "express-session": "^1.17.0",
     "express-validator": "^5.2.0",
     "file-system": "*",
-    "jquery": "^3.3.1",
-    "mongodb": "^3.0.8",
-    "mongoose": "^5.1.1",
-    "nodemon": "^1.17.4",
+    "jquery": "^3.4.1",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.7",
+    "nodemon": "^1.19.4",
     "passport": "*",
     "passport-http": "*",
-    "passport-local": "*"
+    "passport-local": "*",
+    "sanitize-filename": "^1.6.3",
+    "ws": "^7.0.0"
   },
-  "author": "Zachary Cash",
+  "author": "Joshua Kohn, Mitch Kimball, Justin Reeves",
   "license": "ISC"
 }
