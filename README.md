@@ -6,7 +6,7 @@ Welcome to the Team!
 
 Server installation and how to:
 
-The actual code of the server lives in /var/www/senior_project
+The actual code of the server lives in ```/var/www/senior_project```,
 everything should be there.
 
 Mongodb is located at ```/usr/bin```
